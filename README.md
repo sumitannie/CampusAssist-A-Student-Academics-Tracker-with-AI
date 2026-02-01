@@ -1,8 +1,8 @@
 # 🎓 Student Progress Tracker (Teacher Tool)
 
-A web-based **Student Progress Tracking System** built using **Flask**, designed specifically for **school teachers** to manage student records, generate report cards, and quickly search or filter students.
+A web-based Student Progress Tracking System built using Flask, designed specifically for school teachers to manage student records, generate report cards, and quickly search or filter students.
 
-This project focuses on **clarity, simplicity, and real classroom usability**, rather than overcomplicated features.
+This project focuses on clarity, simplicity, and real classroom usability, rather than overcomplicated features.
 
 ---
 
