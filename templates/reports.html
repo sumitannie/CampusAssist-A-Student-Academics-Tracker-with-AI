@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Reports</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+  <h1>📚 Stored Report Cards</h1>
+
+  {% if students %}
+    <div class="card">
+      {% for s in students %}
+        <p>
+          <strong>{{ s.name }}</strong> (Class {{ s.class }})
+          <a href="{{ url_for('view_report', student_id=s.id) }}" class="btn secondary" style="float:right">
+            View
+          </a>
+        </p>
+        <hr>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No reports available yet.</p>
+  {% endif %}
+
+  <a href="{{ url_for('home') }}" class="btn">⬅ Back to Dashboard</a>
+</div>
+
+</body>
+</html>

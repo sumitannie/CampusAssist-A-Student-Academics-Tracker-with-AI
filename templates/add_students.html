@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Student</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+  <h1>➕ Add Student Details</h1>
+
+  <form method="POST" action="{{ url_for('add_student') }}" class="form-card">
+
+    <input type="text" name="name" placeholder="Student Name" required>
+    <input type="number" name="roll" placeholder="Roll Number" required>
+    <input type="text" name="class" placeholder="Class (e.g. 8A)" required>
+
+    <h3>Enter Marks</h3>
+
+    <input type="number" name="maths" placeholder="Maths" required>
+    <input type="number" name="science" placeholder="Science" required>
+    <input type="number" name="computer" placeholder="Computer" required>
+
+    <button type="submit" class="btn">Generate Report</button>
+  </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Progress Tracker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+
+  <div class="container">
+    <h1>📊 Student Progress Tracker</h1>
+    <p class="subtitle">Teacher Tool for Managing Student Performance</p>
+
+    <div class="card">
+      <a href="{{ url_for('add_student') }}" class="btn">➕ Add Student</a>
+      <a href="{{ url_for('students_list') }}" class="btn secondary">
+        👩‍🎓 All Students
+      </a>
+
+
+    </div>
+  </div>
+
+</body>
+</html>

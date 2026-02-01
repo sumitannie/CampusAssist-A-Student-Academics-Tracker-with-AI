@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Report Card</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  <style>
+    .school-header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .school-header h2 {
+      margin: 0;
+      color: #0d47a1;
+    }
+
+    .school-header p {
+      margin: 4px 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-bottom: 25px;
+      text-align: left;
+    }
+
+    .info-box {
+      background: #f5f9ff;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 25px;
+    }
+
+    table th, table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    table th {
+      background: #e3f2fd;
+    }
+
+    .summary-box {
+      background: #f1f8e9;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .remarks-box {
+      margin-top: 20px;
+      padding: 15px;
+      background: #fffde7;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .signature-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    .signature {
+      text-align: center;
+    }
+
+    .signature hr {
+      width: 150px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- School Header -->
+  <div class="school-header">
+    <p>Academic Session 2026–27</p> 
+    <p style="font-size: larger;"><strong>STUDENT REPORT CARD</strong></p>
+    <br>
+  </div>
+
+  <!-- Student Info -->
+  <div class="info-grid">
+    <div class="info-box"><strong>Name:</strong> {{ student.name }}</div>
+    <div class="info-box"><strong>Roll No:</strong> {{ student.roll }}</div>
+    <div class="info-box"><strong>Class & Section:</strong> {{ student.class }}</div>
+    <div class="info-box"><strong>Report ID:</strong> {{ student.id }}</div>
+  </div>
+
+  <!-- Marks Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Maximum Marks</th>
+        <th>Marks Obtained</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mathematics</td>
+        <td>100</td>
+        <td>{{ student.maths }}</td>
+        <td>
+          {% if student.maths >= 80 %}A
+          {% elif student.maths >= 60 %}B
+          {% else %}C
+          {% endif %}
+        </td>
+      </tr>
+      <tr>
+        <td>Science</td>
+        <td>100</td>
+        <td>{{ student.science }}</td>
+        <td>
+          {% if student.science >= 80 %}A
+          {% elif student.science >= 60 %}B
+          {% else %}C
+          {% endif %}
+        </td>
+      </tr>
+      <tr>
+        <td>Computer Science</td>
+        <td>100</td>
+        <td>{{ student.computer }}</td>
+        <td>
+          {% if student.computer >= 80 %}A
+          {% elif student.computer >= 60 %}B
+          {% else %}C
+          {% endif %}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Performance Summary -->
+  <div class="summary-box">
+    <p><strong>Total Marks:</strong> {{ student.total }} / 300</p>
+    <p><strong>Percentage:</strong> {{ student.percentage }}%</p>
+    <p><strong>Overall Grade:</strong> {{ student.grade }}</p>
+  </div>
+
+  <!-- Teacher Remarks -->
+  <div class="remarks-box">
+    <strong>Class Teacher’s Remarks:</strong>
+    <p>{{ student.remark }}</p>
+  </div>
+
+  <!-- Signatures -->
+  <div class="signature-row">
+    <div class="signature">
+      <hr>
+      <p>Class Teacher</p>
+    </div>
+    <div class="signature">
+      <hr>
+      <p>Principal</p>
+    </div>
+  </div>
+
+  <br>
+
+  <a href="{{ url_for('students_list') }}" class="btn secondary">
+    ⬅ Back to All Students
+  </a>
+
+</div>
+
+</body>
+</html>

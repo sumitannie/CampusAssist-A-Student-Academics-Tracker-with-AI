@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to right, #e3f2fd, #ffffff);
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+h1 {
+  color: #1565c0;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.card, .form-card, .report-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+h3 {
+  margin-top: 20px;
+  color: #444;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: #1565c0;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #0d47a1;
+}
+
+.secondary {
+  background: #4caf50;
+}
+
+.secondary:hover {
+  background: #388e3c;
+}
+
+.report-card p {
+  text-align: left;
+  margin: 8px 0;
+}
+
+hr {
+  margin: 15px 0;
+}
